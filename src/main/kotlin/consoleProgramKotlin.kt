@@ -66,7 +66,7 @@ fun main(args: Array<String>) {
     val foundCountries = mutableListOf("The Countries that you found:")
 
     println("This is a game where you enter in names of countries in Europe.")
-    println("The rules are simple: Country names start with a Capital letter. Score only inceases when you type the right name.")
+    println("The rules are simple: Country names start with a Capital letter. Keep going until you can not think of any other European countries. Let us see how many you get!")
     println("Type your country name:")
 
     // The following takes the input from the User and answers whether the country is correct or they need to try again
