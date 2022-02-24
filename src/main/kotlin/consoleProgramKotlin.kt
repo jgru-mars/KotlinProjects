@@ -10,7 +10,7 @@ program closes, it will proceed to print out the list of countries that the user
 import kotlin.system.exitProcess
 
 // the start
-fun main(args: Array<String>) {
+fun main() {
 
     //list of the countries
     var countries = listOf(
