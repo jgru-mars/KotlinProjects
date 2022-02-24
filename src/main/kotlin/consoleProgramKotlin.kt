@@ -64,6 +64,7 @@ fun main() {
     )
     // This is the list that keeps track of the countries the user gets correct
     val foundCountries = mutableListOf("The Countries that you found:")
+    var count = 0
 
     println("This is a game where you enter in names of countries in Europe.")
     println("The rules are simple: Country names start with a Capital letter. Keep going until you can not think of any other European countries. Let us see how many you get!")
@@ -76,6 +77,7 @@ fun main() {
         // The next two lines add the input into the list of found countries
         var addCountry = userInput.toString()
         foundCountries.add(addCountry)
+        count++
     } else {
         println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces!")
     }
@@ -96,6 +98,7 @@ fun main() {
                     // The next two lines add the input into the list of found countries
                     var addCountry = userInput.toString()
                     foundCountries.add(addCountry)
+                    count++
                 } else {
                     println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces!")
                 }
@@ -114,6 +117,7 @@ fun main() {
                     // The next two lines add the input into the list of found countries
                     var addCountry = userInput.toString()
                     foundCountries.add(addCountry)
+                    count++
                 } else {
                     println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces!")
                 }
@@ -125,12 +129,14 @@ fun main() {
                 println("Okay, thank you for playing")
                 //prints the found countries
                 println(foundCountries)
+                println("you got $count out of 45 European countries! Turkey and Cyprus count today I guess.")
                 exitProcess(0)
             }
             // if answer is no to go again, it exits program after saying what countries they found
             "no" -> {
                 println("Okay, thank you for playing")
                 println(foundCountries)
+                println("you got $count out of 45 European countries! Turkey and Cyprus count today I guess.")
                 exitProcess(0)
             }
             // if not a yes or no it will run this command. This is a validation
