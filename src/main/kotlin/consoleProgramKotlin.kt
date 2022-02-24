@@ -13,7 +13,7 @@ import kotlin.system.exitProcess
 fun main() {
 
     //list of the countries
-    var countries = listOf(
+    val countries = listOf(
         "France",
         "United Kingdom",
         "Spain",
@@ -77,7 +77,7 @@ fun main() {
         foundCountries.add(addCountry)
         count++
     } else {
-        println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces!")
+        println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces before the country name!")
     }
 
     // It enters a while loop that will continue until User says that they do not know any more countries
@@ -98,7 +98,7 @@ fun main() {
                     foundCountries.add(addCountry)
                     count++
                 } else {
-                    println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces!")
+                    println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces before the country name!")
                 }
                 //continues while loop
                 continue@another
@@ -109,6 +109,11 @@ fun main() {
                 println(foundCountries)
                 println("you got $count out of 45 European countries!")
                 exitProcess(0)
+            }
+            "yes or no" -> {
+                println("Please say either yes or no.")
+                //The continue@another will make it so the while loop continues until it exits with a "no" answer
+                continue@another
             }
             // if not a yes or no it will run this command. This is a validation
             else -> {
