@@ -66,7 +66,7 @@ fun main() {
 
     println("This is a game where you enter in names of countries in Europe.")
     println("The rules are simple: Country names start with a Capital letter. Keep going until you can not think of any other European countries. Let us see how many you get!")
-    println("Type your country name:")
+    println("Type the name of a European country:")
 
     // The following takes the input from the User and answers whether the country is correct or they need to try again
     var userInput = readLine()
@@ -83,30 +83,11 @@ fun main() {
     // It enters a while loop that will continue until User says that they do not know any more countries
     another@ while (true) {
         println("Lets go again!")
-        println("Yes or No, do you know any countries in Europe still?")
-        when (readLine()) {
-            // if answer is yes to go again, it runs this
-            "Yes" -> {
-                println("Type your country name:")
-                //reads user input
-                var userInput = readLine()
-                // checks input with country list
-                if (countries.contains(userInput)) {
-                    println("The $userInput is a country in Europe!")
-                    // The next two lines add the input into the list of found countries
-                    var addCountry = userInput.toString()
-                    foundCountries.add(addCountry)
-                    count++
-                } else {
-                    println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces!")
-                }
-                // continues while loop
-                continue@another
-
-            }
+        println("Yes or No, do you know anymore countries in Europe?")
+        when (readLine()?.lowercase()) {
             // if answer is yes to go again, it runs this
             "yes" -> {
-                println("Type your country name:")
+                println("Type the name of a new European country:")
                 //reads user input
                 var userInput = readLine()
                 // checks input with country list
@@ -121,14 +102,6 @@ fun main() {
                 }
                 //continues while loop
                 continue@another
-            }
-            // if answer is no to go again, it exits program after saying what countries they found
-            "No" -> {
-                println("Okay, thank you for playing")
-                //prints the found countries
-                println(foundCountries)
-                println("you got $count out of 45 European countries!")
-                exitProcess(0)
             }
             // if answer is no to go again, it exits program after saying what countries they found
             "no" -> {
