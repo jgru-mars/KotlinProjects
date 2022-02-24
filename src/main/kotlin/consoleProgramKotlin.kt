@@ -48,7 +48,6 @@ fun main() {
         "Poland",
         "Czech Republic",
         "Kosovo",
-        "Turkey",
         "Greece",
         "Albania",
         "Romania",
@@ -59,8 +58,7 @@ fun main() {
         "North Macedonia",
         "Malta",
         "Montenegro",
-        "Liechtenstein",
-        "Cyprus"
+        "Liechtenstein"
     )
     // This is the list that keeps track of the countries the user gets correct
     val foundCountries = mutableListOf("The Countries that you found:")
@@ -129,14 +127,14 @@ fun main() {
                 println("Okay, thank you for playing")
                 //prints the found countries
                 println(foundCountries)
-                println("you got $count out of 45 European countries! Turkey and Cyprus count today I guess.")
+                println("you got $count out of 45 European countries!")
                 exitProcess(0)
             }
             // if answer is no to go again, it exits program after saying what countries they found
             "no" -> {
                 println("Okay, thank you for playing")
                 println(foundCountries)
-                println("you got $count out of 45 European countries! Turkey and Cyprus count today I guess.")
+                println("you got $count out of 45 European countries!")
                 exitProcess(0)
             }
             // if not a yes or no it will run this command. This is a validation
