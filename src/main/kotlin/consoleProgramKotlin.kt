@@ -77,7 +77,7 @@ fun main() {
         foundCountries.add(addCountry)
         count++
     } else {
-        println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces before the country name!")
+        println("Uhhh! Try again! Also, don't forget the first letter is capitalized! And no spaces before the country name!")
     }
 
     // It enters a while loop that will continue until User says that they do not know any more countries
@@ -93,10 +93,15 @@ fun main() {
                 // checks input with country list
                 if (countries.contains(userInput)) {
                     println("The $userInput is a country in Europe!")
-                    // The next two lines add the input into the list of found countries
-                    var addCountry = userInput.toString()
-                    foundCountries.add(addCountry)
-                    count++
+                    // The next two lines add the input into the list of found countries, if havent been added already
+                    if (foundCountries.contains(userInput)) {
+                        println("You already found this country! You almost got me!")
+                    }
+                    else {
+                        var addCountry = userInput.toString()
+                        foundCountries.add(addCountry)
+                        count++
+                    }
                 } else {
                     println("Uhhh!Try again! Also, don't forget the first letter is capitalized! And no spaces before the country name!")
                 }
@@ -106,7 +111,7 @@ fun main() {
             // if answer is no to go again, it exits program after saying what countries they found
             "no" -> {
                 println("Okay, thank you for playing")
-                println(foundCountries)
+                println(foundCountries.distinct())
                 println("you got $count out of 45 European countries!")
                 exitProcess(0)
             }
